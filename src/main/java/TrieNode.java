@@ -4,15 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TrieNode {
-    private final Map<Character, TrieNode> children;
+    private final Map<Character, TrieNode> children = new HashMap<>();
     private boolean isEndOfWord;
-    private int frequency; // Частота использования слова
-
-    public TrieNode() {
-        this.children = new HashMap<>();
-        this.isEndOfWord = false;
-        this.frequency = 0;
-    }
+    private int frequency;
 
     // Геттеры и сеттеры
     public Map<Character, TrieNode> getChildren() {

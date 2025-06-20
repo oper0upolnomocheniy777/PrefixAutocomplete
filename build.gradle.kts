@@ -1,19 +1,24 @@
 plugins {
     application
     java
+    id("org.openjfx.javafxplugin") version "0.1.0"
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "21"
+    modules = listOf("javafx.controls", "javafx.fxml")
+}
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
 }
 
 application {
-    mainClass.set("service.App")
-    applicationDefaultJvmArgs = listOf(
-        "-Dfile.encoding=UTF-8",
-        "-Dconsole.encoding=UTF-8"
-    )
-}
-
-tasks.withType<JavaExec> {
-    systemProperty("file.encoding", "UTF-8")
-    systemProperty("sun.jnu.encoding", "UTF-8")
+    mainClass.set("service.TrieDemoApp")
 }
 
 java {
